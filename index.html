@@ -5,18 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>导航</title>
-  <script src="fonts/font_3729091_1jwn6kdooww.js"></script>
+  <script src="//at.alicdn.com/t/c/font_3729091_mylsp8120f.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="preview">
   <div id="page">
     <section id="search">
       <div class="search-type">
-        <div class="search-tab active">
+        <div data-type="baidu" class="search-tab tab-baidu active">
           <svg class="icon" aria-hidden="true"><use xlink:href="#icon-baidu"></use></svg> 
           百度
         </div>
-        <div class="search-tab">
+        <div data-type="bing" class="search-tab tab-bing">
           <svg class="icon" aria-hidden="true"><use xlink:href="#icon-microsoft"></use></svg>
           必应
         </div>
@@ -33,16 +33,6 @@
           <ul class="panel">
             <li class="tag">百度</li>
             <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
           </ul>
         </li>
         <li class="item">
@@ -50,37 +40,31 @@
           <ul class="panel">
             <li class="tag">百度</li>
             <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-          </ul>
-        </li>
-        <li class="item">
-          <h2>常用网站</h2>
-          <ul class="panel">
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
-            <li class="tag">百度</li>
-            <li class="tag">知乎</li>
-            <li class="tag">v2ex</li>
-            <li class="tag">饥人谷</li>
           </ul>
         </li>
       </ul>
     </section>
+    <div class="plus">
+      <svg class="icon icon-plus" aria-hidden="true"><use xlink:href="#icon-plus"></use></svg> 
+    </div>
   </div>
+  <div id="setting">
+    <svg class="icon icon-setting" aria-hidden="true"><use xlink:href="#icon-settings"></use></svg> 
+    <svg class="icon icon-back" aria-hidden="true"><use xlink:href="#icon-back"></use></svg> 
+  </div>
+  <div class="modal modal-1">
+    <h4>输入分类名称</h4>
+    <div class="field">
+      <input type="text" placeholder="输入分类名称">
+    </div>
+    <div class="button confirm">确定</div>
+    <div class="button cancel">取消</div>
+  </div>
+  <script src="js/main.js"></script>
+  <script>
+    // baidu = 'https://www.baidu.com/s?wd='+'饥人谷'
+    //bing =  'https://cn.bing.com/search?q=' + '饥人谷'
+
+  </script>
 </body>
 </html>

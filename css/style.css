@@ -24,6 +24,7 @@ body {
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
+  cursor: pointer;
 }
 
 #page {
@@ -32,6 +33,36 @@ body {
   padding: 20px;
   /* overflow: hidden; */
 }
+
+#setting {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+  color: #fff;
+}
+
+body.preview .icon-back {
+  display: none;
+}
+
+body.preview .icon-setting {
+  display: block;
+}
+
+body.setting .icon-back {
+  display: block;
+}
+
+body.setting .icon-setting {
+  display: none;
+}
+
+
+#setting .icon {
+  width: 30px;
+  height: 30px;
+}
+
 
 #search {
   display: flex;
@@ -88,9 +119,9 @@ body {
   transition: all .3s;
 }
 
-.search-input > input:focus {
+/* .search-input > input:focus {
   width: calc(100vw - 40px);
-}
+} */
 
 .search-input > input::placeholder {
   color: #999;
@@ -104,6 +135,15 @@ body {
   color: #fff;
   font-size: 32px;
 }
+
+#websites h2 .icon-delete {
+  display: none;
+}
+
+body.setting #websites h2 .icon-delete {
+  display: inline;
+}
+
 
 #websites .panel {
   display: flex;
@@ -135,4 +175,60 @@ body {
 
 #websites .tag:nth-child(4n+4) {
   background: lightpink;
+}
+
+.plus {
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+body.setting .plus {
+  display: flex;
+}
+
+body.preview .plus {
+  display: none;
+}
+
+.plus .icon {
+  width: 60px;
+  height: 60px;
+  color: #fff;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -100vh);
+  width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all .3s;
+}
+
+.modal.show {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal .field {
+  margin: 10px 0px; 
+}
+
+.modal .field input {
+  line-height: 20px;
+  width: 100%;
+}
+
+.button {
+  background: #eee;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
 }
