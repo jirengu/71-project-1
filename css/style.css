@@ -136,12 +136,32 @@ body.setting .icon-setting {
   font-size: 32px;
 }
 
-#websites h2 .icon-delete {
+#websites h2 .icon-delete,
+#websites h2 .icon-edit,
+.panel .icon-add  {
   display: none;
 }
 
-body.setting #websites h2 .icon-delete {
+.icon-remove   {
+  position: absolute;
+  right: -11px;
+  top: -9px;
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
+body.setting #websites h2 .icon-delete,
+body.setting #websites h2 .icon-edit{
   display: inline;
+}
+
+body.setting .panel .icon-add   {
+  display: block;
+}
+
+body.setting .icon-remove   {
+  display: block;
 }
 
 
@@ -156,6 +176,7 @@ body.setting #websites h2 .icon-delete {
 }
 
 #websites .tag {
+  position: relative;
   border-radius: 4px;
   padding: 4px 16px;
   margin: 4px 8px;
