@@ -127,14 +127,26 @@ $('.modal-3 .confirm').onclick = function() {
   $('.modal-3').classList.remove('show')
 }
 
+function find(element, className) {
+  // 循环直到element为null（即到达文档的最顶层）
+  while (element !== null) {
+      // 检查当前元素是否包含指定的className
+      if (element.classList.contains(className)) {
+          return element
+      }
+      // 移动到父级元素
+      element = element.parentElement
+  }
+  // 如果没有找到，返回null
+  return null
+}
 
 $('.list').onclick = function(e) {
-  console.log(e.path)
-  let $delete = e.path.find($node => $node.classList&&$node.classList.contains('icon-delete'))
+  console.log(e.target)
+  let $delete = find(e.target, 'icon-delete') 
   if($delete) {
-    let $result = e.path.filter($node => $node.classList&&$node.classList.contains('item'))
-    if($result.length > 0) {
-      let $item = $result[0]
+    let $item = find(e.target, 'item')
+    if($item) {
       let index = [...$$('.item')].indexOf($item)
       console.log(index)
       data.splice(index, 1)
@@ -143,11 +155,10 @@ $('.list').onclick = function(e) {
     }
     console.log($result )
   }
-  let $edit = e.path.find($node => $node.classList&&$node.classList.contains('icon-edit'))
+  let $edit = find(e.target, 'icon-edit') 
   if($edit) {
-    let $result = e.path.filter($node => $node.classList&&$node.classList.contains('item'))
-    if($result.length > 0) {
-      let $item = $result[0]
+    let $item = find(e.target, 'item')
+    if($item ) {
       let index = [...$$('.item')].indexOf($item)
       curModifyIdx = index
       $curModify = $item
@@ -157,11 +168,10 @@ $('.list').onclick = function(e) {
       $('.modal-2 input').value = title
     }
   }
-  let $add = e.path.find($node => $node.classList&&$node.classList.contains('icon-add'))
+  let $add = find(e.target, 'icon-add') 
   if($add) {
-    let $result = e.path.filter($node => $node.classList&&$node.classList.contains('item'))
-    if($result.length > 0) {
-      let $item = $result[0]
+    let $item = find(e.target, 'item')
+    if($item) {
       let index = [...$$('.item')].indexOf($item)
       console.log(index)
       $('.modal-3').classList.add('show')
@@ -169,7 +179,7 @@ $('.list').onclick = function(e) {
       $curModify = $item
     }
   }
-  let $remove = e.path.find($node => $node.classList&&$node.classList.contains('icon-remove')) 
+  let $remove = find(e.target, 'icon-remove') 
   if($remove) {
     let $tag = $remove.parentElement
     let tagArr = [...$tag.parentElement.children]
@@ -177,9 +187,8 @@ $('.list').onclick = function(e) {
     console.log(tagIndex)
     window.$remove = $remove
     console.log($tag)
-    let $result = e.path.filter($node => $node.classList&&$node.classList.contains('item'))
-    if($result.length > 0) {
-      let $item = $result[0]
+    let $item = find(e.target, 'item')
+    if($item ) {
       let index = [...$$('.item')].indexOf($item)
       data[index].data.splice(tagIndex, 1)
       save()
